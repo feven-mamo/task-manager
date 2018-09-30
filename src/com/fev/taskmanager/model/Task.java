@@ -5,6 +5,13 @@ public class Task {
 	private String title;
 	private String description;
 
+	public Task(int iD, String title, String description) {
+		super();
+		ID = iD;
+		this.title = title;
+		this.description = description;
+	}
+
 	public int getID() {
 		return ID;
 	}
