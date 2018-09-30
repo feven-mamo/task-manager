@@ -5,4 +5,6 @@ import com.fev.taskmanager.model.Task;
 
 public interface TaskRepository {
 	List<Task> fetchAllTasks();
+
+	void addTask(Task task);
 }

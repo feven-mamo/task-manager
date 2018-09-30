@@ -6,4 +6,6 @@ import com.fev.taskmanager.model.Task;
 
 public interface TaskService {
 	List<Task> getTasks();
+
+	void addTask(Task task);
 }
