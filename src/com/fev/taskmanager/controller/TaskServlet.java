@@ -19,6 +19,7 @@ import com.fev.taskmanager.service.TaskServiceImpl;
 public class TaskServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	TaskService taskService = new TaskServiceImpl();
+	ObjectMapper objectMapper = new ObjectMapper();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -30,4 +31,12 @@ public class TaskServlet extends HttpServlet {
 		response.getWriter().append(tasksJson);
 	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		Task newTask = objectMapper.readValue(request.getInputStream(), Task.class);
+		taskService.addTask(newTask);
+		System.out.println(newTask.getTitle());
+
+	}
 }

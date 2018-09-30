@@ -15,4 +15,10 @@ public class TaskServiceImpl implements TaskService {
 		return tasks;
 	}
 
+	@Override
+	public void addTask(Task task) {
+		taskRepository.addTask(task);
+
+	}
+
 }
